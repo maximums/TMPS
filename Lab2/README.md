@@ -82,10 +82,10 @@ BaseFactory cyberPunkFactory = CyberPunkFurnitureFactory.getCyberPunkFurnitureFa
 <br>
 
 ### Program output:<br>
-![Output](https://github.com/maximums/TMPS/blob/master/img/output.png)
+![Output](https://github.com/maximums/TMPS/blob/master/Lab2/img/output.png)
 <br>
 ### Diagram of program structure:
-![Output](https://github.com/maximums/TMPS/blob/master/img/diagrama.png)
+![Output](https://github.com/maximums/TMPS/blob/master/Lab2/img/diagrama.png)
 <br>
 ### UML diagram of program structure:
-![Output](https://github.com/maximums/TMPS/blob/master/img/diagrama1.png)
+![Output](https://github.com/maximums/TMPS/blob/master/Lab2/img/diagrama1.png)
