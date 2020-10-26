@@ -2,8 +2,8 @@
 ### Author: Dodi Cristian-Dumitru
 #### Group: FAF-181
 ## Objectives:
-1. **Study the Creational Design Patterns**<br>
-2. **Implement them in real projects**<br>
+1. **Study the Structural Design Patterns**<br>
+2. **Expanding previous laboratory work by adding some additional functionalities using some structural design patterns**<br>
 
 ## Theory:
 **Design patterns** are typical solutions to common problems
@@ -12,21 +12,25 @@ that can be customize to solve a particular
 design problem.They define a common language that helps developer teams
 communicate more efficiently.<br>
 <br>
-**Creational Design Patterns** provide various object creation mechanisms,
- which increase flexibility and reuse of existing code.<br>
-Some examples of this kind of design patterns are:<br>
-- Singleton
-- Builder
-- Prototype
-- Object Pooling
-- Factory Method
-- Abstract Factory
+In software engineering, the **Structural Design Patterns** are concerned with how classes and objects are composed
+ to form larger structures.
+ Structural class patterns use inheritance to create a hierarchy of classes/abstractions,
+ but the structural object patterns use composition which is generally a more flexible alternative to inheritance.<br>
+Some examples of from this category of design patterns are:<br>
+- Adapter
+- Bridge
+- Composite
+- Decorator
+- Facade
+- Flyweight
+- Proxy
 
 ## Implementation:<br>
-In this project I've implemented 4 creational design patterns i.e(Abstract Factory, Factory Method, Singleton and Builder) with 
-the emphasis on the objects of type Furniture:Chair, Table, Sofa.Type Furniture contains 3 attributes, *get* and *set* methods and *toString*, which is used 
-for output.<br>
-**Singleton DP**, I've implemented in **CyberPunkFurnitureFactory**, **ModernFurnitureFactory** and **ArtDecoFurnitureFactory** classes. For this I use a
+In this project I've implemented 3 structural design patterns i.e(Decorator, Facade and Adapter) with 
+the emphasis on the objects of type Furniture:Chair, Table, Sofa and objects of type Technique:
+PC, TV, Playstation.Type Furniture contains 4 attributes, *get* and *set* methods and *toString*, which is used 
+for output,type Technique contains 3 attributes and same methods as Furniture type.<br>
+**Adapter DP**, I've implemented in **TechniqueAdapter**,__||||VOI CONTINUA||||__ **ModernFurnitureFactory** and **ArtDecoFurnitureFactory** classes. For this I use a
 static attribute for instance.<br><br>
 `private static ArtDecoFurnitureFactory artDecoFurnitureFactory;`<br>
 `private static CyberPunkFurnitureFactory cyberPunkFurnitureFactory;`<br>
