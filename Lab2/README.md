@@ -57,11 +57,10 @@ is set to _standard_, we can create a furniture object with desired color. <br>
         return furniture;
     }
 ```
-<br>
 
-Third structural DP I had implemented is __Facade DP__ which allows me to hide the complex process of creating cusom furniture item
-and make this process simpler for him. I have implemented this DP in __FurnitureCustomizer__ class, with method _getCustomFurniture()_
-get furniture item with his personal color.<br>
+Third structural DP I had implemented is **Facade DP** which allows me to hide the complex process of creating cusom furniture item
+and make this process simpler for him. I have implemented this DP in **FurnitureCustomizer** class, with method *getCustomFurniture()*
+get furniture item with his personal color.
 
 ```
 
