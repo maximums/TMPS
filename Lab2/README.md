@@ -30,57 +30,45 @@ In this project I've implemented 3 structural design patterns i.e(Decorator, Fac
 the emphasis on the objects of type Furniture:Chair, Table, Sofa and objects of type Technique:
 PC, TV, Playstation.Type Furniture contains 4 attributes, *get* and *set* methods and *toString*, which is used 
 for output,type Technique contains 3 attributes and same methods as Furniture type.<br>
-**Adapter DP**, I've implemented in **TechniqueAdapter**,__||||VOI CONTINUA||||__ **ModernFurnitureFactory** and **ArtDecoFurnitureFactory** classes. For this I use a
-static attribute for instance.<br><br>
-`private static ArtDecoFurnitureFactory artDecoFurnitureFactory;`<br>
-`private static CyberPunkFurnitureFactory cyberPunkFurnitureFactory;`<br>
-`private static  ModerFurnitureFactory moderFurnitureFactory;`<br><br>
-Then I declare the constructor as private:<br><br>
-`private ArtDecoFurnitureFactory () {}`<br>
-`private CyberPunkFurnitureFactory() {}`<br>
-`private ModerFurnitureFactory() {}`<br><br>
-So that the class could be instantiated only from *getInstance()* method which is a
-static and by a simple if i.e.:<br>
+**Adapter DP**, I've implemented in **TechniqueAdapter**,which allows me to use method arrangeHouse(Furniture... furnishes) from class House, 
+with parameters of type Technique instead of type Furniture.<br><br>
+
 ```
-public static ModerFurnitureFactory getModerFurnitureFactory() {
-        if (moderFurnitureFactory == null)
-            synchronized (ModerFurnitureFactory.class) {
-                moderFurnitureFactory = new ModerFurnitureFactory();
-            }
-        return moderFurnitureFactory;
+    void arrangeHouse(Furniture... furnishes){
+        System.out.println("\nCreated house contain objects:\n");
+        for (Furniture furniture : furnishes)
+            System.out.println(furniture.toString());
     }
 ```
 <br>
 
-The __Builder DP__ ensures that a program can create different objects by the same creational process.
-In my project there are 2 stages to create the furniture object.First is chosen the factory by the style of furniture(Art Deco, Modern,
- CyberPunk) and then in the coresponding factory is chosen a builder class. The creation methods are implemented in __Director__ class.<br>
-<br>
-The factory methods that I've used in my project are in Builder package ,FurnitureBuilder interface.
-There are multiple classes which implement the interface(ChairBuilder, SofaBuilder, TableBuilder). Then based on the type parameter it is chosen one of them.<br>
-<br>
-Above that I have the factories which get the coresponding builder for each *style* .
-These factories implements the **BaseFactory** interface. <br>
-<br>
-The process of creating different types of furnitures of different styles is in the following lines from **Main** class:
+The __Decorator DP__  lets us attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
+In my project I have implemented it in __BaseFurnitureFactoryDecorator__ and __ColorSetter__ classes from package wrappers.
+__ColorSetter__ allow us to customize our furniture object and instead of creating a standard furniture object, in our case attribute _color_
+is set to _standard_, we can create a furniture object with desired color. <br>
 <br>
 
 ```
 
-BaseFactory cyberPunkFactory = CyberPunkFurnitureFactory.getCyberPunkFurnitureFactoryFactory();
-        System.out.println(cyberPunkFactory.createFurniture("chair").toString());
-        System.out.println(cyberPunkFactory.createFurniture("sofa").toString());
-        System.out.println(cyberPunkFactory.createFurniture("table").toString());
+@Override
+    public Furniture createFurniture(String type) {
+        Furniture furniture = super.createFurniture(type);
+        furniture.setColor(this.customColor);
+        return furniture;
+    }
+```
+<br>
+Third structural DP I had implemented is __Facade DP__ which allows me to hide the complex process of creating cusom furniture item
+and make this process simpler for him. I have implemented this DP in __FurnitureCustomizer__ class, with method _getCustomFurniture()_
+get furniture item with his personal color. 
+<br>
 
-        BaseFactory artDecoFactory = ArtDecoFurnitureFactory.getArtDecoFurnitureFactory();
-        System.out.println(artDecoFactory.createFurniture("chair").toString());
-        System.out.println(artDecoFactory.createFurniture("sofa").toString());
-        System.out.println(artDecoFactory.createFurniture("table").toString());
+```
 
-        BaseFactory moderFactory = ModerFurnitureFactory.getModerFurnitureFactory();
-        System.out.println(moderFactory.createFurniture("chair").toString());
-        System.out.println(moderFactory.createFurniture("sofa").toString());
-        System.out.println(moderFactory.createFurniture("table").toString());
+ public Furniture getCustomFurniture(String type, String customColor) {
+        BaseFurnitureFactoryDecorator customFurniture = new ColorSetter(furnitureFactory, customColor);
+        return customFurniture.createFurniture(type);
+    }
 ```
 
 <br>
