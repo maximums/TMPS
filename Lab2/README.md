@@ -30,7 +30,7 @@ In this project I've implemented 3 structural design patterns i.e(Decorator, Fac
 the emphasis on the objects of type Furniture:Chair, Table, Sofa and objects of type Technique:
 PC, TV, Playstation.Type Furniture contains 4 attributes, *get* and *set* methods and *toString*, which is used 
 for output,type Technique contains 3 attributes and same methods as Furniture type.<br>
-**Adapter DP**, I've implemented in **TechniqueAdapter**,which allows me to use method arrangeHouse(Furniture... furnishes) from class House, 
+**Adapter DP**, I've implemented in **TechniqueAdapter**,which allows me to use method _arrangeHouse(Furniture... furnishes)_ from class House, 
 with parameters of type Technique instead of type Furniture.<br><br>
 
 ```
@@ -58,10 +58,10 @@ is set to _standard_, we can create a furniture object with desired color. <br>
     }
 ```
 <br>
+
 Third structural DP I had implemented is __Facade DP__ which allows me to hide the complex process of creating cusom furniture item
 and make this process simpler for him. I have implemented this DP in __FurnitureCustomizer__ class, with method _getCustomFurniture()_
-get furniture item with his personal color. 
-<br>
+get furniture item with his personal color.<br>
 
 ```
 
@@ -70,7 +70,6 @@ get furniture item with his personal color.
         return customFurniture.createFurniture(type);
     }
 ```
-
 <br>
 
 ### Program output:<br>
