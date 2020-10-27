@@ -21,25 +21,28 @@ public class Main {
                 ,cyberPunkFactory.createFurniture("chair")
                 ,cyberPunkFactory.createFurniture("table"));
 
+        System.out.println("\n-----------------------------------------------------------------------\n");
+
         FurnitureCustomizer customizer = new FurnitureCustomizer(cyberPunkFactory);
 
         System.out.println(customizer.getCustomFurniture("sofa", "pink"));
         System.out.println(customizer.getCustomFurniture("chair", "pink"));
         System.out.println(customizer.getCustomFurniture("table", "pink"));
 
-        System.out.println(cyberPunkFactory.createFurniture("chair").toString());
-        System.out.println(cyberPunkFactory.createFurniture("sofa").toString());
-        System.out.println(cyberPunkFactory.createFurniture("table").toString());
 
-        BaseFurnitureFactory artDecoFactory = ArtDecoFurnitureFactory.getArtDecoFurnitureFactory();
-        System.out.println(artDecoFactory.createFurniture("chair").toString());
-        System.out.println(artDecoFactory.createFurniture("sofa").toString());
-        System.out.println(artDecoFactory.createFurniture("table").toString());
-
-        BaseFurnitureFactory moderFactory = ModerFurnitureFactory.getModerFurnitureFactory();
-        System.out.println(moderFactory.createFurniture("chair").toString());
-        System.out.println(moderFactory.createFurniture("sofa").toString());
-        System.out.println(moderFactory.createFurniture("table").toString());
+//        System.out.println(cyberPunkFactory.createFurniture("chair").toString());
+//        System.out.println(cyberPunkFactory.createFurniture("sofa").toString());
+//        System.out.println(cyberPunkFactory.createFurniture("table").toString());
+//
+//        BaseFurnitureFactory artDecoFactory = ArtDecoFurnitureFactory.getArtDecoFurnitureFactory();
+//        System.out.println(artDecoFactory.createFurniture("chair").toString());
+//        System.out.println(artDecoFactory.createFurniture("sofa").toString());
+//        System.out.println(artDecoFactory.createFurniture("table").toString());
+//
+//        BaseFurnitureFactory moderFactory = ModerFurnitureFactory.getModerFurnitureFactory();
+//        System.out.println(moderFactory.createFurniture("chair").toString());
+//        System.out.println(moderFactory.createFurniture("sofa").toString());
+//        System.out.println(moderFactory.createFurniture("table").toString());
 
     }
 }
