@@ -6,6 +6,7 @@ import com.utm.furniture.Furniture;
 
 
 public class ColorSetter extends BaseFurnitureFactoryDecorator{
+
     private final String customColor;
 
     public ColorSetter(BaseFurnitureFactory baseFurnitureFactory, String customColor) {

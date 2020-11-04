@@ -7,6 +7,7 @@ import com.utm.furniture.Furniture;
 
 
 public class FurnitureCustomizer {
+
     private final BaseFurnitureFactory  furnitureFactory;
 
     public FurnitureCustomizer(BaseFurnitureFactory furnitureFactory) {

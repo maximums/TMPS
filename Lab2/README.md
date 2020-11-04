@@ -1,4 +1,4 @@
-# Topic: Creational Design Patterns
+# Topic: Structural Design Patterns
 ### Author: Dodi Cristian-Dumitru
 #### Group: FAF-181
 ## Objectives:
@@ -8,7 +8,7 @@
 ## Theory:
 **Design patterns** are typical solutions to common problems
 in software design. Each pattern is like a blueprint
-that can be customize to solve a particular
+that can be customized to solve a particular
 design problem.They define a common language that helps developer teams
 communicate more efficiently.<br>
 <br>
@@ -30,8 +30,12 @@ In this project I've implemented 3 structural design patterns i.e(Decorator, Fac
 the emphasis on the objects of type Furniture:Chair, Table, Sofa and objects of type Technique:
 PC, TV, Playstation.Type Furniture contains 4 attributes, *get* and *set* methods and *toString*, which is used 
 for output,type Technique contains 3 attributes and same methods as Furniture type.<br>
-**Adapter DP**, I've implemented in **TechniqueAdapter**,which allows me to use method _arrangeHouse(Furniture... furnishes)_ from class House, 
-with parameters of type Technique instead of type Furniture.<br><br>
+**Adapter DP**, I've implemented in **TechniqueAdapter** using composition:
+```
+private final Technique object;
+```
+It allows me to use method _arrangeHouse(Furniture... furnishes)_ from class House, 
+with parameters of type Technique instead of type Furniture.<br>
 
 ```
     void arrangeHouse(Furniture... furnishes){
@@ -43,13 +47,16 @@ with parameters of type Technique instead of type Furniture.<br><br>
 <br>
 
 The __Decorator DP__  lets us attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
-In my project I have implemented it in __BaseFurnitureFactoryDecorator__ and __ColorSetter__ classes from package wrappers.
+In my project I have implemented it in __BaseFurnitureFactoryDecorator__ class from package wrappers, using composition:
+```
+protected BaseFurnitureFactory wrapper;
+```
+With its help I attach new behavior _Color setting_ from __ColorSetter__ class.
 __ColorSetter__ allow us to customize our furniture object and instead of creating a standard furniture object, in our case attribute _color_
-is set to _standard_, we can create a furniture object with desired color. <br>
+is set to _standard_, we can create a furniture object with desired color.
 <br>
 
 ```
-
 @Override
     public Furniture createFurniture(String type) {
         Furniture furniture = super.createFurniture(type);
@@ -58,9 +65,12 @@ is set to _standard_, we can create a furniture object with desired color. <br>
     }
 ```
 
-Third structural DP I had implemented is **Facade DP** which allows me to hide the complex process of creating cusom furniture item
-and make this process simpler for user. I have implemented this DP in **FurnitureCustomizer** class, with method *getCustomFurniture()*
-user get furniture item with his personal color.
+Third structural DP that I had implemented is **Facade DP** which allows me to hide the complex process of creating custom furniture item
+and make this process simpler for user. I have implemented this DP in **FurnitureCustomizer** class, likewise, using the composition:
+```
+private final BaseFurnitureFactory  furnitureFactory;
+```
+Method *getCustomFurniture()* allows user to obtain furniture item with his personal color.
 
 ```
 
@@ -74,8 +84,15 @@ user get furniture item with his personal color.
 ### Program output:<br>
 ![Output](https://github.com/maximums/TMPS/blob/master/Lab2/img/output.png)
 <br>
-### Diagram of program structure:
-![Output](https://github.com/maximums/TMPS/blob/master/Lab2/img/diagrama.png)
-<br>
 ### UML diagram of program structure:
-![Output](https://github.com/maximums/TMPS/blob/master/Lab2/img/diagrama1.png)
+#### Technique object:
+![Output](https://github.com/maximums/TMPS/blob/master/Lab2/img/tech.png)
+<br>
+#### Furniture object:
+![Output](https://github.com/maximums/TMPS/blob/master/Lab2/img/furn.png)
+<br>
+#### Factory:
+![Output](https://github.com/maximums/TMPS/blob/master/Lab2/img/factory.png)
+<br>
+#### House object:
+![Output](https://github.com/maximums/TMPS/blob/master/Lab2/img/hz.png)

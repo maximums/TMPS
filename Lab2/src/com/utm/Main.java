@@ -30,19 +30,19 @@ public class Main {
         System.out.println(customizer.getCustomFurniture("table", "pink"));
 
 
-//        System.out.println(cyberPunkFactory.createFurniture("chair").toString());
-//        System.out.println(cyberPunkFactory.createFurniture("sofa").toString());
-//        System.out.println(cyberPunkFactory.createFurniture("table").toString());
-//
-//        BaseFurnitureFactory artDecoFactory = ArtDecoFurnitureFactory.getArtDecoFurnitureFactory();
-//        System.out.println(artDecoFactory.createFurniture("chair").toString());
-//        System.out.println(artDecoFactory.createFurniture("sofa").toString());
-//        System.out.println(artDecoFactory.createFurniture("table").toString());
-//
-//        BaseFurnitureFactory moderFactory = ModerFurnitureFactory.getModerFurnitureFactory();
-//        System.out.println(moderFactory.createFurniture("chair").toString());
-//        System.out.println(moderFactory.createFurniture("sofa").toString());
-//        System.out.println(moderFactory.createFurniture("table").toString());
+        System.out.println(cyberPunkFactory.createFurniture("chair").toString());
+        System.out.println(cyberPunkFactory.createFurniture("sofa").toString());
+        System.out.println(cyberPunkFactory.createFurniture("table").toString());
+
+        BaseFurnitureFactory artDecoFactory = ArtDecoFurnitureFactory.getArtDecoFurnitureFactory();
+        System.out.println(artDecoFactory.createFurniture("chair").toString());
+        System.out.println(artDecoFactory.createFurniture("sofa").toString());
+        System.out.println(artDecoFactory.createFurniture("table").toString());
+
+        BaseFurnitureFactory moderFactory = ModerFurnitureFactory.getModerFurnitureFactory();
+        System.out.println(moderFactory.createFurniture("chair").toString());
+        System.out.println(moderFactory.createFurniture("sofa").toString());
+        System.out.println(moderFactory.createFurniture("table").toString());
 
     }
 }

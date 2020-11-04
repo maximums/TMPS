@@ -4,6 +4,7 @@ import com.utm.furniture.Furniture;
 import com.utm.technique.Technique;
 
 public class TechniqueAdapter implements Furniture {
+
     private final Technique object;
 
     public TechniqueAdapter(Technique technique){

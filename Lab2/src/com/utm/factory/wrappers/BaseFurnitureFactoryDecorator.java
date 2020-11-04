@@ -4,6 +4,7 @@ import com.utm.factory.BaseFurnitureFactory;
 import com.utm.furniture.Furniture;
 
 public class BaseFurnitureFactoryDecorator implements BaseFurnitureFactory {
+
     protected BaseFurnitureFactory wrapper;
 
     public BaseFurnitureFactoryDecorator(BaseFurnitureFactory baseFurnitureFactory){

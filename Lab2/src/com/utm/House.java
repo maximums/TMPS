@@ -6,7 +6,7 @@ import com.utm.furniture.Furniture;
 public class House {
     private static volatile House house;
 
-    private House() {};
+    private House() {}
 
     public static House getHouse() {
         if (house == null)
