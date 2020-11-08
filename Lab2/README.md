@@ -69,13 +69,8 @@ is set to _standard_, will create a furniture object with desired color.
     }
 ```
 
-Third structural DP that I had implemented is **Facade DP** which allows me to hide the complex process of creating custom furniture item
-and make this process simpler for user. I have implemented this DP in **FurnitureCustomizer** class, likewise, using the composition:
-```
-public class FurnitureCustomizer {
-
-    private final BaseFurnitureFactory  furnitureFactory;
-```
+Third structural DP that I had implemented is **Facade DP** which allows me to hide the complex process of creating  and customizing furniture item
+and make this processes simpler for user. I have implemented this DP in **FurnitureCustomizer** class:
 Method *getCustomFurniture()* allows user to obtain furniture item with his personal color and in his own style.
 
 ```
@@ -85,6 +80,17 @@ public Furniture getCustomFurniture(String type, String customColor, String styl
         Furniture customFurniture = customizer.createFurniture(type);
         customFurniture.setStyle(style);
         return customFurniture;
+    }
+```
+
+Methods from **Director** class simplify process of building furniture items using builder:
+```
+public FurnitureBuilder makeModernChair(ChairBuilder builder){
+        builder.reset();
+        builder.setName("Chair");
+        builder.setStyle("Modern");
+        builder.setPrice(400f);
+        return builder;
     }
 ```
 <br>
