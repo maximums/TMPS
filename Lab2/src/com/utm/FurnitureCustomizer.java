@@ -2,7 +2,7 @@ package com.utm;
 
 import com.utm.factory.BaseFurnitureFactory;
 import com.utm.factory.wrappers.BaseFurnitureFactoryDecorator;
-import com.utm.factory.wrappers.ColorSetter;
+import com.utm.factory.wrappers.ColorCustomizer;
 import com.utm.furniture.Furniture;
 
 
@@ -14,8 +14,10 @@ public class FurnitureCustomizer {
         this.furnitureFactory = furnitureFactory;
     }
 
-    public Furniture getCustomFurniture(String type, String customColor) {
-        BaseFurnitureFactoryDecorator customFurniture = new ColorSetter(furnitureFactory, customColor);
-        return customFurniture.createFurniture(type);
+    public Furniture getCustomFurniture(String type, String customColor, String style) {
+        BaseFurnitureFactoryDecorator customizer = new ColorCustomizer(furnitureFactory, customColor);
+        Furniture customFurniture = customizer.createFurniture(type);
+        customFurniture.setStyle(style);
+        return customFurniture;
     }
 }

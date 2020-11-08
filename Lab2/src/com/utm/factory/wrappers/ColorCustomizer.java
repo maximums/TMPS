@@ -5,11 +5,11 @@ import com.utm.furniture.Furniture;
 
 
 
-public class ColorSetter extends BaseFurnitureFactoryDecorator{
+public class ColorCustomizer extends BaseFurnitureFactoryDecorator{
 
     private final String customColor;
 
-    public ColorSetter(BaseFurnitureFactory baseFurnitureFactory, String customColor) {
+    public ColorCustomizer(BaseFurnitureFactory baseFurnitureFactory, String customColor) {
         super(baseFurnitureFactory);
         this.customColor = customColor;
     }

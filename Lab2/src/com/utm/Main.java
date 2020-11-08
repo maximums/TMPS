@@ -25,9 +25,9 @@ public class Main {
 
         FurnitureCustomizer customizer = new FurnitureCustomizer(cyberPunkFactory);
 
-        System.out.println(customizer.getCustomFurniture("sofa", "pink"));
-        System.out.println(customizer.getCustomFurniture("chair", "pink"));
-        System.out.println(customizer.getCustomFurniture("table", "pink"));
+        System.out.println(customizer.getCustomFurniture("sofa", "pink", "My Style"));
+        System.out.println(customizer.getCustomFurniture("chair", "blue", "Custom Style"));
+        System.out.println(customizer.getCustomFurniture("table", "red", "My own style"));
 
 
         System.out.println(cyberPunkFactory.createFurniture("chair").toString());

@@ -32,10 +32,12 @@ PC, TV, Playstation.Type Furniture contains 4 attributes, *get* and *set* method
 for output,type Technique contains 3 attributes and same methods as Furniture type.<br>
 **Adapter DP**, I've implemented in **TechniqueAdapter** using composition:
 ```
-private final Technique object;
+public class TechniqueAdapter extends AdapterUtil {
+
+    private final Technique object;
 ```
 It allows me to use method _arrangeHouse(Furniture... furnishes)_ from class House, 
-with parameters of type Technique instead of type Furniture.<br>
+with parameters of type Technique instead of type Furniture, which are incompatible types because of different attributes (_Style_ and _Brand_)<br>
 
 ```
     void arrangeHouse(Furniture... furnishes){
@@ -49,11 +51,13 @@ with parameters of type Technique instead of type Furniture.<br>
 The __Decorator DP__  lets us attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
 In my project I have implemented it in __BaseFurnitureFactoryDecorator__ class from package wrappers, using composition:
 ```
-protected BaseFurnitureFactory wrapper;
+public class BaseFurnitureFactoryDecorator implements BaseFurnitureFactory {
+
+    protected BaseFurnitureFactory wrapper;
 ```
-With its help I attach new behavior _Color setting_ from __ColorSetter__ class.
-__ColorSetter__ allow us to customize our furniture object and instead of creating a standard furniture object, in our case attribute _color_
-is set to _standard_, we can create a furniture object with desired color.
+With its help I attach new behavior _Color setting_ from __ColorCustomizer__ class.
+__ColorCustomizer__ allow us to add new function to our factory, which now instead of creating a standard furniture object, in our case attribute _color_
+is set to _standard_, will create a furniture object with desired color.
 <br>
 
 ```
@@ -68,15 +72,19 @@ is set to _standard_, we can create a furniture object with desired color.
 Third structural DP that I had implemented is **Facade DP** which allows me to hide the complex process of creating custom furniture item
 and make this process simpler for user. I have implemented this DP in **FurnitureCustomizer** class, likewise, using the composition:
 ```
-private final BaseFurnitureFactory  furnitureFactory;
+public class FurnitureCustomizer {
+
+    private final BaseFurnitureFactory  furnitureFactory;
 ```
-Method *getCustomFurniture()* allows user to obtain furniture item with his personal color.
+Method *getCustomFurniture()* allows user to obtain furniture item with his personal color and in his own style.
 
 ```
 
- public Furniture getCustomFurniture(String type, String customColor) {
-        BaseFurnitureFactoryDecorator customFurniture = new ColorSetter(furnitureFactory, customColor);
-        return customFurniture.createFurniture(type);
+public Furniture getCustomFurniture(String type, String customColor, String style) {
+        BaseFurnitureFactoryDecorator customizer = new ColorCustomizer(furnitureFactory, customColor);
+        Furniture customFurniture = customizer.createFurniture(type);
+        customFurniture.setStyle(style);
+        return customFurniture;
     }
 ```
 <br>
