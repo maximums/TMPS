@@ -51,7 +51,7 @@ with parameters of type Technique instead of type Furniture, which are incompati
 The __Decorator DP__  lets us attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
 In my project I have implemented it in __BaseFurnitureFactoryDecorator__ class from package wrappers, using composition:
 ```
-public class BaseFurnitureFactoryDecorator implements BaseFurnitureFactory {
+public class BaseFurnitureFactoryDecorator  {
 
     protected BaseFurnitureFactory wrapper;
 ```

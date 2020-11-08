@@ -3,7 +3,7 @@ package com.utm.factory.wrappers;
 import com.utm.factory.BaseFurnitureFactory;
 import com.utm.furniture.Furniture;
 
-public class BaseFurnitureFactoryDecorator implements BaseFurnitureFactory {
+public class BaseFurnitureFactoryDecorator  {
 
     protected BaseFurnitureFactory wrapper;
 
@@ -11,7 +11,6 @@ public class BaseFurnitureFactoryDecorator implements BaseFurnitureFactory {
         this.wrapper = baseFurnitureFactory;
     }
 
-    @Override
     public Furniture createFurniture(String type) {
         return wrapper.createFurniture(type);
     }
