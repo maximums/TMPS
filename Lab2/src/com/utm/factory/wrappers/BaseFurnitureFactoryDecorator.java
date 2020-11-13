@@ -3,7 +3,7 @@ package com.utm.factory.wrappers;
 import com.utm.factory.BaseFurnitureFactory;
 import com.utm.furniture.Furniture;
 
-public class BaseFurnitureFactoryDecorator {
+public class BaseFurnitureFactoryDecorator implements BaseFurnitureFactory{
 
     protected BaseFurnitureFactory wrapper;
 
