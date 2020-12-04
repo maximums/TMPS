@@ -1,7 +1,10 @@
 package com.utm;
 
+import com.utm.adapter.TechniqueAdapter;
+import com.utm.facade.FurnitureCustomizer;
 import com.utm.factory.*;
 import com.utm.furniture.Furniture;
+import com.utm.iterator.House;
 import com.utm.technique.PC;
 import com.utm.technique.Playstation;
 import com.utm.technique.TV;
@@ -48,6 +51,24 @@ public class Main {
         System.out.println(moderFactory.createFurniture("sofa").toString());
         System.out.println(moderFactory.createFurniture("table").toString());
 
+        house.addFurniture(tvAdapter);
+        house.addFurniture(ps5Adapter);
+        house.addFurniture(pcAdapter);
+        house.addFurniture(cyberPunkFactory.createFurniture("sofa"));
+        house.addFurniture(cyberPunkFactory.createFurniture("chair"));
+        house.addFurniture(cyberPunkFactory.createFurniture("table"));
+        house.addFurniture(customizer.getCustomFurniture("sofa", "blackPink", "In Your Area"));
+
+        printFurnitureObjects(house.iterator());
     }
 
+    private static void printFurnitureObjects(Iterator<Furniture> iterator) {
+        System.out.println("House contain next objects:");
+        System.out.println("\n///////////////////////////////////////////////////////////////////////////////////////\n");
+        while (iterator.hasNext()) {
+            Furniture furniture = iterator.next();
+            System.out.println(furniture.toString());
+        }
+        System.out.println("\n///////////////////////////////////////////////////////////////////////////////////////");
+    }
 }
