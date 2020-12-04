@@ -28,7 +28,7 @@ Some examples of from this category of design patterns are:<br>
 ## Implementation:<br>
 In this project I've implemented 2 behavioral design patterns i.e(Null Object and Iterator) with 
 the emphasis on the objects of type Furniture:Chair, Table, Sofa and objects of type Technique:
-PC, TV, Playstation.<br>
+PC, TV, Playstation.<br><br>
 The intent of a **Null Object DP** is to encapsulate the absence of an object by 
 providing a substitutable alternative that offers suitable default do nothing behavior.
 **Null Object**, I've implemented for both types of objects(*Furniture*, *Technique*) in **NullFurniture**
