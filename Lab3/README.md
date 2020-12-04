@@ -57,7 +57,7 @@ private static void printFurnitureObjects(Iterator<Furniture> iterator) {
 ```
 
 ### Program output:<br>
-![Output](https://github.com/maximums/TMPS/blob/master/Lab2/img/output.png)
+![Output](https://github.com/maximums/TMPS/blob/master/Lab3/img/output.png)
 <br>
 #### Iterator DP:
-![Output](https://github.com/maximums/TMPS/blob/master/Lab2/img/iterator.png)
+![Output](https://github.com/maximums/TMPS/blob/master/Lab3/img/iterator.png)
