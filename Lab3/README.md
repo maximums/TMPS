@@ -45,7 +45,7 @@ also this class return iterator through next method:
         return new FurnitureIterator(furnitures);
     }
 ```
-This iterator I used later in main class __Main__ to traverse all objects from _house_ in static method
+This iterator I used later in main class, __Main__ to traverse all objects from _house_ in static method
 _printFurnitureObjects_:
 ```
 private static void printFurnitureObjects(Iterator<Furniture> iterator) {
